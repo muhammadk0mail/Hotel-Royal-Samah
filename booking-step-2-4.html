@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>RESERVATION || HOTEL ROYAL SAMAH</title>
+  <link rel="shortcut icon" href="images/royal_logo.JPG" type="image/x-icon">
+  <link rel="apple-touch-icon" type="image/x-icon" href="images/royal_logo.JPG">
+  <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="images/royal_logo.JPG">
+  <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="images/royal_logo.JPG">
+  <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="images/royal_logo.JPG">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/reservationstyle.css">
+  <link rel="stylesheet" href="js/jquery-ui.min.css">
+</head>
+<body>
+   <script>
+      function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /*loop through a collection of all HTML elements:*/
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain atrribute:*/
+          file = elmnt.getAttribute("w3-include-html");
+          if (file) {
+            /*make an HTTP request using the attribute value as the file name:*/
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+              if (this.readyState == 4) {
+                if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                /*remove the attribute, and call this function once more:*/
+                elmnt.removeAttribute("w3-include-html");
+                includeHTML();
+              }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /*exit the function:*/
+            return;
+          }
+        }
+      };
+    </script>  
+
+
+<div w3-include-html="header.html"></div>
+
+<!-- header of foam start -->
+<div class="step-row mt-4">
+  <div id="progress2"></div>
+  <div class="step-coloumn text-light fw-bold"><small>1. Choose Date</small></div>
+    <div class="step-coloumn  text-light fw-bold"><small>2. Choose Room</small></div>
+    <div class="step-coloumn"><small>3. Checkout </small></div>
+    <div class="step-coloumn"><small>4. Confirmation</small></div>
+</div>
+<!-- header of foam end -->
+
+
+<!-- --------------------------------------------------- -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 bg-dark left_part_of_part_2 text-light mt-5 pt-4">
+            <p class="text-danger fw-bold">Your Reservation</p>
+            <!-- <hr> -->
+            <div class="col-md-12 pt-2">
+              <p>Check In: 14/08/2021 </p>
+            </div>
+            <hr>
+            <div class="col-md-12 pt-2">
+              <p>Check Out: 15/08/2021 </p>
+            </div>
+            <hr>
+            <div class="col-md-12 pt-2">
+              <p>Guests: 1 Adult </p>
+            </div>
+            <hr>
+            <div class="col-md-12 py-4">
+                <a href="#" class="btn btn-danger">Edit Reservation</a>
+            </div>
+
+        </div>
+        <div class="col-md-7 pt-3 bg-dark mt-5 right_part_2">
+            <!-- --------------------------------------------------- -->
+            <p class="text-danger fw-bold mb-4">Choose Your Room</p>
+            <!-- <hr> -->
+            <!-- card 1 Start -->
+            <div class="col-md-12 py-1 card_1_part_2">
+                <div class="card mb-3 bg-dark text-light" style="max-width: 740px;">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <p class="fw-bold">MASTER TWIN</p> 
+                        <img src="images/carp1.jpg" class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title mt-5">Occupancy: 3 Persons</h5>
+                          <p class="card-text mb-5" dir="rtl">From: Rs.4,500 / Night</p>
+                          <p class="card-text pt-4"><small class="text-muted"><a href="#" class="btn btn-danger">Select Room</a></small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <!-- card 1 End -->
+            <!-- card 2 Start -->
+            <div class="col-md-12 py-1 card_1_part_2">
+                <div class="card mb-3 bg-dark text-light" style="max-width: 740px;">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <p class="fw-bold">EXECUTIVE</p> 
+                        <img src="images/carp3.jpg" class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title mt-5">Occupancy: 2 Persons</h5>
+                          <p class="card-text mb-5" dir="rtl">From: Rs.4,000 / Night</p>
+                          <p class="card-text pt-4"><small class="text-muted"><a href="#" class="btn btn-danger">Select Room</a></small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <!-- card 2 End -->
+            <!-- card 3 Start -->
+            <div class="col-md-12 py-1 card_1_part_2">
+                <div class="card mb-3 bg-dark text-light" style="max-width: 740px;">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <p class="fw-bold">STANDARD</p> 
+                        <img src="images/standard.jpg" class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title mt-5">Occupancy: 2 Persons</h5>
+                          <p class="card-text mb-5" dir="rtl">From: Rs.3,500 / Night</p>
+                          <p class="card-text pt-4"><small class="text-muted"><a href="#" class="btn btn-danger">Select Room</a></small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <!-- card 3 End -->
+            <!-- card 4 Start -->
+            <div class="col-md-12 py-1 card_1_part_2">
+                <div class="card mb-3 bg-dark text-light" style="max-width: 740px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                        <p class="fw-bold">VIP</p> 
+                        <img src="images/carp2.jpg" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title mt-5">Occupancy: 2 Persons</h5>
+                            <p class="card-text mb-5" dir="rtl">From: Rs.5,000 / Night</p>
+                            <p class="card-text pt-4"><small class="text-muted"><a href="#" class="btn btn-danger">Select Room</a></small></p>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+            <!-- card 4 End -->
+
+            <!-- --------------------------------------------------- -->
+        </div>
+   </div>
+</div>
+
+<!-- --------------------------------------------------- -->
+<div w3-include-html="footer.html"></div>
+
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+
+<script>
+  includeHTML();
+  $("#checkIn").datepicker();
+  $("#checkOut").datepicker();
+</script>
+
+
+</body>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</html>
