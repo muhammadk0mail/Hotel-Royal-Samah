@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>RESERVATION || HOTEL ROYAL SAMAH</title>
+  <link rel="shortcut icon" href="images/royal_logo.JPG" type="image/x-icon">
+  <link rel="apple-touch-icon" type="image/x-icon" href="images/royal_logo.JPG">
+  <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="images/royal_logo.JPG">
+  <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="images/royal_logo.JPG">
+  <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="images/royal_logo.JPG">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/reservationstyle.css">
+  <link rel="stylesheet" href="js/jquery-ui.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+  <!-- bootstrap link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/headerstyle.css">
+  <!-- FOnt awesome link -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /*loop through a collection of all HTML elements:*/
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+          /*make an HTTP request using the attribute value as the file name:*/
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+              if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+              /*remove the attribute, and call this function once more:*/
+              elmnt.removeAttribute("w3-include-html");
+              includeHTML();
+            }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /*exit the function:*/
+          return;
+        }
+      }
+    };
+  </script>
+
+
+  <div w3-include-html="header.html"></div>
+  <!-- ===================STEP 1=========================== -->
+  <div class="form-step form-step-active">
+    <!-- ================================================= -->
+    <div class="container">
+    <div class="position-relative m-4">
+      <div class="progress" style="height: 1px;">
+        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="50" aria-valuemin="0"
+          aria-valuemax="100"></div>
+      </div>
+      <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill"
+        style="width: 2rem; height:2rem;">1</button>
+      <button type="button"
+        class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-secondary rounded-pill"
+        style="width: 2rem; height:2rem;">2</button>
+      <button type="button"
+        class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill"
+        style="width: 2rem; height:2rem;">3</button>
+    </div>
+  </div>
+    <!-- header of foam end -->
+
+    <!-- --------------------------------------------------- -->
+    <div class="container">
+      <div class="row">
+        <!-- --------------------------------------------------- -->
+        <div class="col-md-4 my-5 py-3 fir1">
+          <form class="row g-3 bg-dark p-3 text-light form_part_1">
+            <p class="text-danger fw-bold fs-4">Your Reservation</p>
+            <div class="col-md-6">
+              <label for="checkIn" class="form-label p-0 m-0">Check In</label>
+              <input type="Date" class="form-control m-0" placeholder="mm/dd/yyyy" id="checkIn" onchange="fillDate()" name="check-In"
+                required>
+
+            </div>
+            <div class="col-md-6">
+              <label for="checkOut" class="form-label  p-0 m-0">Check Out</label>
+              <input type="Date" class="form-control m-0" placeholder="mm/dd/yyyy" id="checkOut" name="check-Out"
+                required>
+            </div>
+            <hr>
+
+            <div class="col-6">
+              <label class="" for="adult">Adults</label>
+              <select class="form-select" id="adult" name="adult">
+                <option selected value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+
+
+            <div class="col-6">
+              <label class="" for="children">Children</label>
+              <select class="form-select" id="children" name="children">
+                <option selected value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            <hr>
+            <a class="btn btn-danger" onclick="register1()">Check Availablity</a>
+            </foam>
+        </div>
+        <!-- --------------------------------------------------- -->
+        <div class="col-md-6 my-5 py-0 bg-dark fir2">
+          <p class="text-danger fw-bold fs-4 mt-4">NOTE</p>
+          <div>
+            <ul style="list-style-type:initial; color:white;">
+              <li>
+                <p class="text-white fs-6"> We will contact you within 24 to 48 hours of your booking</p>
+              </li>
+              <li>
+                <p class="text-white fs-6"> The booking process take 3 steps</p>
+              </li>
+              <li>
+                <p class="text-white fs-6"> Find the room on the dates you want to stay</p>
+              </li>
+              <li>
+                <p class="text-white fs-6">  Select the room and it's availablity according to your convenience and comfort</p>
+              </li>
+              <li>
+                <p class="text-white fs-6"> kindly fill the form with proper details and complete information</p>
+              </li>
+              <li>
+                <p class="text-white fs-6">  prices can be negotiated</p>
+              </li>
+              <li>
+                <p class="text-white fs-6">  For more information and queries please contact <a href="tel:0097300909" class="top text-light">0097300909</a></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- --------------------------------------------------- -->
+      </div>
+    </div>
+    <!-- =================================== -->
+  </div>
+  <!-- =================================== -->
+
+
+  <!-- ===================STEP 2=========================== -->
+  <div class="form-step">
+    <div class="container">
+    <!-- ================================================= -->
+    <div class="position-relative m-4">
+      <div class="progress" style="height: 1px;">
+        <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
+          aria-valuemax="100"></div>
+      </div>
+      <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill"
+        style="width: 2rem; height:2rem;">1</button>
+      <button type="button"
+        class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill"
+        style="width: 2rem; height:2rem;">2</button>
+      <button type="button"
+        class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill"
+        style="width: 2rem; height:2rem;">3</button>
+    </div>
+  </div>
+    <!-- header of foam end -->
+
+
+    <!-- --------------------------------------------------- -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 bg-dark left_part_of_part_2 text-light mt-5 pt-4 ">
+          <p class="text-danger fw-bold">Your Reservation</p>
+          <!-- <hr> -->
+          <div class="col-md-12 pt-2">
+            <p>Check In: <span id="cI" class="text-white"></span></p>
+          </div>
+          <hr>
+          <div class="col-md-12 pt-2">
+            <p>Check Out: <span id="cO" class="text-white"></span></p>
+          </div>
+          <hr>
+          <div class="col-md-12 pt-2">
+            <p>Guests: <span id="aD" class="text-white"> Adult</span></p>
+          </div>
+          <hr>
+          <div class="col-md-12 py-4">
+            <a class="btn btn-danger" type="submit" onclick="editReservation()">Edit Reservation</a>
+          </div>
+        </div>
+        <div class="col-md-7 pt-3 bg-dark mt-5 right_part_2">
+          <!-- --------------------------------------------------- -->
+          <p class="text-danger fw-bold mb-4">Choose Your Room</p>
+          <!-- <hr> -->
+          <!-- card 1 Start -->
+          <div class="col-md-12 py-1 card_1_part_2">
+            <div class="card mb-3 bg-dark text-light" style="max-width: 740px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <p class="fw-bold">MASTER TWIN</p>
+                  <img src="images/carp1.jpg" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title mt-5">Occupancy: 3 Persons</h5>
+                    <p class="card-text mb-5" dir="rtl">From: Rs.4,500 / Night</p>
+                    <p class="card-text pt-4"><small class="text-muted"><a class="btn btn-danger" type="submit"
+                          onclick="register2_1()">Select Room</a></small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- card 1 End -->
+          <!-- card 2 Start -->
+          <div class="col-md-12 py-1 card_1_part_2">
+            <div class="card mb-3 bg-dark text-light" style="max-width: 740px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <p class="fw-bold">EXECUTIVE</p>
+                  <img src="images/carp3.jpg" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title mt-5">Occupancy: 2 Persons</h5>
+                    <p class="card-text mb-5" dir="rtl">From: Rs.4,000 / Night</p>
+                    <p class="card-text pt-4"><small class="text-muted"><a class="btn btn-danger" type="submit"
+                          onclick="register2_2()">Select Room</a></small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- card 2 End -->
+          <!-- card 3 Start -->
+          <div class="col-md-12 py-1 card_1_part_2">
+            <div class="card mb-3 bg-dark text-light" style="max-width: 740px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <p class="fw-bold">STANDARD</p>
+                  <img src="images/standard.jpg" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title mt-5">Occupancy: 2 Persons</h5>
+                    <p class="card-text mb-5" dir="rtl">From: Rs.3,500 / Night</p>
+                    <p class="card-text pt-4"><small class="text-muted"><a class="btn btn-danger" type="submit"
+                          onclick="register2_3()">Select Room</a></small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- card 3 End -->
+          <!-- card 4 Start -->
+          <div class="col-md-12 py-1 card_1_part_2">
+            <div class="card mb-3 bg-dark text-light" style="max-width: 740px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <p class="fw-bold">VIP</p>
+                  <img src="images/carp2.jpg" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title mt-5">Occupancy: 2 Persons</h5>
+                    <p class="card-text mb-5" dir="rtl">From: Rs.5,000 / Night</p>
+                    <p class="card-text pt-4"><small class="text-muted"><a class="btn btn-danger" type="submit"
+                          onclick="register2_4()">Select Room</a></small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- card 4 End -->
+
+          <!-- --------------------------------------------------- -->
+        </div>
+      </div>
+    </div>
+    <!-- =================================== -->
+  </div>
+  <!-- =================================== -->
+
+  <!-- ===================STEP 3=========================== -->
+  <div class="form-step">
+    <!-- ================================================= -->
+    <!-- header of foam start -->
+    <div class="position-relative m-4">
+      <div class="progress" style="height: 1px;">
+        <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="50" aria-valuemin="0"
+          aria-valuemax="100"></div>
+      </div>
+      <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill"
+        style="width: 2rem; height:2rem;">1</button>
+      <button type="button"
+        class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill"
+        style="width: 2rem; height:2rem;">2</button>
+      <button type="button"
+        class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-primary rounded-pill"
+        style="width: 2rem; height:2rem;">3</button>
+    </div>
+    <!-- header of foam end -->
+
+
+    <!-- --------------------------------------------------- -->
+    <div class="container">
+      <div class="row">
+        <!-- left-part start -->
+        <div class="col-md-3 bg-dark left_part_of_part_3 text-light m-3 pt-4">
+          <p class="text-danger fw-bold">Your Reservation</p>
+          <div class="col-md-12 pt-4">
+            <p>Room: <span id="r" class="text-white"></span></p>
+          </div>
+          <hr>
+          <div class="col-md-12 pt-2">
+            <p>Check In: <span id="cI2" class="text-white"></span></p>
+          </div>
+          <hr>
+          <div class="col-md-12 pt-2">
+            <p>Check Out: <span id="cO2" class="text-white"></span></p>
+          </div>
+          <hr>
+          <div class="col-md-12 pt-2">
+            <p>Guests: <span id="aD2" class="text-white"></span> Adult</p>
+          </div>
+          <hr>
+          <div class="col-md-12">
+            <fieldset>
+              <legend class="fieldset">Price: <span id="p"></span></legend>
+            </fieldset>
+          </div>
+        </div>
+        <!-- <div class="col-md-1"></div> -->
+        <!-- --------------------------------------------------- -->
+        <div class="col-md-7  my-3">
+          <form class="row g-3 bg-dark  p-3 text-light">
+            <div class="row bg-dark p-3 text-light">
+              <p class="text-danger fw-bold">Guest Details</p>
+              <div class="col-md-6">
+                <label for="firstName" class="form-label p-0 m-0">First Name*</label>
+                <input type="text" class="form-control m-0" id="firstName" required>
+              </div>
+              <div class="col-md-6">
+                <label for="lastName" class="form-label  p-0 m-0">Last Name*</label>
+                <input type="text" class="form-control m-0" id="lastName" required>
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label p-0 m-0 ">Email*</label>
+                <input type="email" class="form-control m-0" id="email" required>
+              </div>
+              <div class="col-md-6">
+                <label for="telephoneNumber" class="form-label p-0 m-0">Telephone Number*</label>
+                <input type="number" class="form-control m-0" id="telephoneNumber" required>
+              </div>
+              <div class="col-md-6">
+                <label for="cellnumber" class="form-label m-0 p-0">Cell Number*</label>
+                <input type="number" class="form-control m-0" id="cellnumber">
+              </div>
+              <div class="col-md-6">
+                <label for="inputPassword4" class="form-label m-0 p-0">Address Line*</label>
+                <input type="text" class="form-control m-0" id="addressLine">
+              </div>
+              <div class="col-md-6">
+                <label for="cnicOrPassportno" class="form-label m-0 p-0">CNIC No. / Passport No. (for Foreigners
+                  only)*</label>
+                <input type="text" class="form-control m-0" id="cnicOrPassportno">
+              </div>
+              <div class="col-md-6">
+                <label for="city" class="form-label m-0 p-0">City*</label>
+                <input type="text" class="form-control m-0" id="city">
+              </div>
+              <div class="col-md-6">
+                <label for="state" class="form-label m-0 p-0">State*</label>
+                <input type="text" class="form-control m-0" id="state">
+              </div>
+              <div class="col-md-6">
+                <label for="zipOrPostal" class="form-label m-0 p-0">Zip/Postal Code*</label>
+                <input type="text" class="form-control m-0" id="zipOrPostal">
+              </div>
+              <div class="col-6">
+                <label for="country" class="form-label m-0 p-0">Country*</label>
+                <input type="text" class="form-control m-0" id="country">
+              </div>
+              <label for="SpecialRequirementsFlightInfo">Special Requirements / Flight Info.</label>
+              <div class="form-floating col-12 m-0">
+                <textarea class="form-control m-0" id="SpecialRequirementsFlightInfo" style="height: 100px"></textarea>
+              </div>
+
+              <button type="button submit" onclick="register3()" class="btn btn-danger my-3">Book Now</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- --------------------------------------------------- -->
+      </div>
+    </div>
+    <!-- =================================== -->
+  </div>
+  <!-- =================================== -->
+
+  <!-- --------------------------------------------------- -->
+
+
+  <div w3-include-html="footer.html"></div>
+
+  <!-- -------------------Firebase Link------------------------------- -->
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <!--   TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyAO4_7HQ9X0zbdLbM23ZavyuxEI-q5zoqY",
+      authDomain: "royal-samah.firebaseapp.com",
+      projectId: "royal-samah",
+      storageBucket: "royal-samah.appspot.com",
+      messagingSenderId: "894655705314",
+      appId: "1:894655705314:web:b5d0a543149da3e3e76ebb",
+      measurementId: "G-D62T4MMB6Q"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+  <!-- --------------------------------------------------- -->
+
+  <script>
+    includeHTML();
+  </script>
+
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+
+</body>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+
+</html>

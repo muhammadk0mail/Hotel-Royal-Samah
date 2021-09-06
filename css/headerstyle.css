@@ -1,5 +1,6 @@
 body{
-    font-family: "Open Sans", sans-serif;
+    /* font-family: "Open Sans", sans-serif; */
+    font-family: Saira,Arial, Helvetica, sans-serif;
 }
 .nav{
     /* color: white !important; */
@@ -7,8 +8,13 @@ body{
     /* text-decoration: whitesmoke !important; */
 
 }
-
-
+.Slide{
+    position: relative; 
+    /* width: 100%; */
+}
+.bg{
+  background-color: rgb(210, 226, 120);
+}
 
 .navbar-toggler{
     color: white !important;
@@ -114,7 +120,8 @@ a{
 }
 a:hover{
     text-decoration: none;
-    color: blue;
+    /* color: rgb(140, 140, 189); */
+  opacity: 0.4;
 }
 
 /* ----------------------- */
